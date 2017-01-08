@@ -66,9 +66,9 @@ install {
 
                 packaging 'aar'
 
-                name 'SlidingDrawer'
-                description 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
-                url 'https://github.com/MoraisIgor/SlidingDrawer'
+                name 'Print'
+                description ''
+                url 'https://github.com/MoraisIgor/Print'
 
                 licenses {
 
@@ -91,9 +91,9 @@ install {
 
                 scm {
 
-                    url 'https://github.com/MoraisIgor/SlidingDrawer'
-                    connection 'https://github.com/MoraisIgor/SlidingDrawer.git'
-                    developerConnection 'https://github.com/MoraisIgor/SlidingDrawer.git'
+                    url 'https://github.com/MoraisIgor/Print'
+                    connection 'https://github.com/MoraisIgor/Print.git'
+                    developerConnection 'https://github.com/MoraisIgor/Print.git'
                 }
             }
         }
@@ -144,11 +144,11 @@ bintray {
 
         repo = 'Maven'
 
-        name = 'SlidingDrawer'
-        desc = 'SlidingDrawer hides content out of the screen and allows the user to drag a handle to bring the content on screen.'
-        websiteUrl = 'https://github.com/MoraisIgor/SlidingDrawer'
-        issueTrackerUrl = 'https://github.com/MoraisIgor/SlidingDrawer/issues'
-        vcsUrl = 'https://github.com/MoraisIgor/SlidingDrawer.git'
+        name = 'Print'
+        desc = ''
+        websiteUrl = 'https://github.com/MoraisIgor/Print'
+        issueTrackerUrl = 'https://github.com/MoraisIgor/Print/issues'
+        vcsUrl = 'https://github.com/MoraisIgor/Print.git'
         licenses = ['Apache-2.0']
         labels = ['android']
 
