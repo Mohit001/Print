@@ -1,31 +1,33 @@
 # Print
 
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Country-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6248)
 
-Setup
------
+Print take a image of the view.
+
+
+## Setup
 
 Add this to your dependencies:
 
 ```
 dependencies {
-    
-    compile 'com.github.moraisigor::'
+
+    implementation 'com.github.moraisigor:print:0.1.0'
 }
 ```
 
 
-Example
--------
+## Example
 
 
-Contact
--------
+
+
+## Contact
 
 [Igor Morais](http://igormorais.com)
 
 
-License
--------
+## License
 
 ```
 Copyright 2017 Igor Morais
