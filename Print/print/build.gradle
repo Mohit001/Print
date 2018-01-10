@@ -1,0 +1,142 @@
+plugins {
+
+    id 'com.jfrog.bintray' version '1.7.3'
+    id 'com.github.dcendents.android-maven' version '2.0'
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+group = 'com.github.moraisigor'
+version = '0.1.0'
+
+android {
+
+    compileSdkVersion 27
+    buildToolsVersion '27.0.1'
+
+    defaultConfig {
+
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 1
+        versionName '1.0.0'
+    }
+
+    buildTypes {
+
+        release {
+
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+task javadoc(type: Javadoc) {
+
+    excludes = ['**/*.kt']
+
+    source = android.sourceSets.main.java.srcDirs
+
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+
+    classifier = 'javadoc'
+
+    from javadoc.destinationDir
+}
+
+task sourcesJar(type: Jar) {
+
+    from android.sourceSets.main.java.srcDirs
+
+    classifier = 'sources'
+}
+
+artifacts {
+
+    archives javadocJar
+    archives sourcesJar
+}
+
+install {
+
+    repositories.mavenInstaller {
+
+        pom {
+
+            project {
+
+                packaging 'aar'
+
+                name 'Print'
+                description ''
+                url 'https://github.com/MoraisIgor/Print'
+
+                licenses {
+
+                    license {
+
+                        name 'Apache Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0'
+                    }
+                }
+
+                developers {
+
+                    developer {
+
+                        id 'MoraisIgor'
+                        name 'Igor Morais'
+                        email 'igor.morais@hollowsoft.com'
+                    }
+                }
+
+                scm {
+
+                    url 'https://github.com/MoraisIgor/Print'
+                    connection 'https://github.com/MoraisIgor/Print.git'
+                    developerConnection 'https://github.com/MoraisIgor/Print.git'
+                }
+            }
+        }
+    }
+}
+
+bintray {
+
+    Properties p = new Properties()
+
+    p.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    user = p.getProperty('bintray.user')
+    key = p.getProperty('bintray.key')
+
+    publish = true
+
+    configurations = ['archives']
+
+    pkg {
+
+        repo = 'Maven'
+
+        name = 'Print'
+        desc = ''
+        labels = ['android', 'kotlin', 'helper', 'view']
+        licenses = ['Apache-2.0']
+
+        websiteUrl = 'https://github.com/MoraisIgor/Print'
+        issueTrackerUrl = 'https://github.com/MoraisIgor/Print/issues'
+
+        vcsUrl = 'https://github.com/MoraisIgor/Print.git'
+    }
+}
