@@ -79,7 +79,7 @@ install {
                 packaging 'aar'
 
                 name 'Print'
-                description ''
+                description 'Print take a image of the view.'
                 url 'https://github.com/MoraisIgor/Print'
 
                 licenses {
@@ -130,7 +130,7 @@ bintray {
         repo = 'Maven'
 
         name = 'Print'
-        desc = ''
+        desc = 'Print take a image of the view.'
         labels = ['android', 'kotlin', 'helper', 'view']
         licenses = ['Apache-2.0']
 
