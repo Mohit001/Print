@@ -7,8 +7,6 @@ Print take a image of the view.
 
 ## Setup
 
-Add this to your dependencies:
-
 ```
 dependencies {
 
@@ -19,7 +17,11 @@ dependencies {
 
 ## Example
 
+Just call `print` function from any view subclass, such as `TextView`, `Button`, `LinearLayout`.
 
+```Kotlin
+val bitmap = view.print()
+```
 
 
 ## Contact
