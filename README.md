@@ -19,7 +19,7 @@ dependencies {
 
 Just call `print` function from any view subclass, such as `TextView`, `Button`, `LinearLayout`.
 
-```Kotlin
+```kotlin
 val bitmap = view.print()
 ```
 
